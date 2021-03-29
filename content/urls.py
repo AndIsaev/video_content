@@ -1,10 +1,8 @@
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
+from content.views import IndexView, CreateNewPost
 
-from content import views
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    # path("new", views.new_post, name="new_post"),
+    path("", IndexView.as_view(), name="index"),
+    path("new", CreateNewPost.as_view(), name="new_post"),
 ]

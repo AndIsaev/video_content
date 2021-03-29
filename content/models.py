@@ -13,5 +13,8 @@ class Content(models.Model):
     pub_date = models.DateTimeField("Дата публикации", auto_now_add=True)
     videofile = models.FileField("Видео", upload_to='videos/')
 
+    class Meta:
+        ordering = ["-pub_date"]
+
     def __str__(self):
         return f"{self.author} ({self.title}) ({self.text})"
