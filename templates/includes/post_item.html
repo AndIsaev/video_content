@@ -1,8 +1,27 @@
+{% load static %}
+      <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+      <link rel="stylesheet" href="{% static 'video.js/video-js.css' %}">
+      <link rel="stylesheet" href="{% static 'videojs.watermark.css' %}">
 <div class="col">
     <div class="card shadow-sm">
-        <video width="100%" height="225" controls>
-            <source src="{{ post.videofile.url }}" type="video/mp4">
+
+        <video
+            id= "post_{{ post.id }}"
+            class="video-js"
+            controls
+            preload="auto"
+            width="400"
+            height="264"
+            poster=""
+            data-setup="{}"
+          >
+            <source src="{{ post.videofile.url }}" type="video/mp4" />
+
         </video>
+
+
+
+
         <div class="card-body">
             <a name="post_{{ post.id }}" href="">
                 <strong class="d-block text-gray-dark">{{ post.author }}</strong>
@@ -18,3 +37,23 @@
         </div>
     </div>
 </div>
+
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+    <script src="{% static 'video.js/video.js' %}"></script>
+        <script>
+            videojs.options.flash.swf = "static/video.js/video-js.swf"
+        </script>
+        <script src="{% static 'src/videojs.watermark.js' %}"></script>
+        <script>
+        // initialize video.js
+        var my_video_id = videojs("post_{{ post.id }}");
+
+        // Set value to the plugin
+        my_video_id.watermark({
+          file: 'media/3.jpg',
+          xpos: 0.5,
+          ypos: 0.5,
+          xrepeat: 0.5,
+          opacity: 0.5
+          });
+        </script>

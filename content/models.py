@@ -5,7 +5,7 @@ User = get_user_model()
 
 
 class Content(models.Model):
-    """Model for posts"""
+    """Model for posts."""
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="posts", verbose_name="Автор")
     title = models.CharField("Название", max_length=120)
