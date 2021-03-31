@@ -77,7 +77,7 @@ python manage.py runserver
         "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTg3MDQyNDM1LCJqdGkiOiI5ZmNjMWE5YTM5NDQ0Y2Q4OWJlOGFlOGRlYWQxNDE0ZSIsInVzZXJfaWQiOjF9.ZkEdzDN5pNgYToDRJq1CKHjIglK1ir1fhnfcXkmziuk"
     } 
 ```
-* Наш токен "access". Теперь скопировав этот токен, вы мжете получить все посты с видео по ссылке:
+* Наш токен "access". Теперь скопировав этот токен, поставив перед ним "Bearer"(без ковычек), вы мжете получить все посты с видео по ссылке:
 http://127.0.0.1:8000/api/v1/content/
 
 
