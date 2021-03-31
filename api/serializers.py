@@ -8,6 +8,7 @@ class ContentSerializer(serializers.ModelSerializer):
         read_only=True,
         slug_field='username'
     )
+
     class Meta:
         model = Content
         fields = '__all__'

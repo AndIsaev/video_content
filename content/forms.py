@@ -10,5 +10,5 @@ class ContentForm(forms.ModelForm):
         help_texts = {
             "text": ("Напишите текст"),
             "title": ("Напишите заголовок"),
-            "videofile":("Загрузите видео")
+            "videofile": ("Загрузите видео")
         }
