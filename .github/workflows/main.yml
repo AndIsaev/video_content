@@ -1,0 +1,18 @@
+name: video_content
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: pip install flake8 pytest
+    - name: Test flake8
+      run: flake8 content/ users/ api/ main/ --exclude main/settings.py,content/migrations/
